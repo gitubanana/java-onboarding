@@ -17,7 +17,11 @@
 
 ### 실행 결과 예시
 
-| cryptogram | result |
-| --- | --- |
+| cryptogram        | result  |
+|-------------------|---------|
 | "browoanoommnaon" | "brown" |
-| "zyelleyz" | "" |
+| "zyelleyz"        | ""      |
+
+### 기능 목록
+
+- [ ] stack을 활용해 중복된 문자 제거하기
