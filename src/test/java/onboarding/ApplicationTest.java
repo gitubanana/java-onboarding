@@ -1,11 +1,10 @@
 package onboarding;
 
-import org.junit.jupiter.api.Nested;
-import org.junit.jupiter.api.Test;
+import static org.assertj.core.api.Assertions.assertThat;
 
 import java.util.List;
-
-import static org.assertj.core.api.Assertions.assertThat;
+import org.junit.jupiter.api.Nested;
+import org.junit.jupiter.api.Test;
 
 class ApplicationTest {
     @Nested
@@ -14,24 +13,49 @@ class ApplicationTest {
         void case1() {
             List<Integer> pobi = List.of(97, 98);
             List<Integer> crong = List.of(197, 198);
-            int result = 0;
-            assertThat(Problem1.solution(pobi, crong)).isEqualTo(result);
+            assertThat(Problem1.solution(pobi, crong)).isEqualTo(Problem1.TIE);
         }
 
         @Test
         void case2() {
             List<Integer> pobi = List.of(131, 132);
             List<Integer> crong = List.of(211, 212);
-            int result = 1;
-            assertThat(Problem1.solution(pobi, crong)).isEqualTo(result);
+            assertThat(Problem1.solution(pobi, crong)).isEqualTo(Problem1.POBI_WON);
         }
 
         @Test
         void case3() {
             List<Integer> pobi = List.of(99, 102);
             List<Integer> crong = List.of(211, 212);
-            int result = -1;
-            assertThat(Problem1.solution(pobi, crong)).isEqualTo(result);
+            assertThat(Problem1.solution(pobi, crong)).isEqualTo(Problem1.ERROR);
+        }
+
+        @Test
+        void case4() {
+            List<Integer> pobi = List.of(2, 3);
+            List<Integer> crong = List.of(1, 2);
+            assertThat(Problem1.solution(pobi, crong)).isEqualTo(Problem1.ERROR);
+        }
+
+        @Test
+        void case5() {
+            List<Integer> pobi = List.of(1, 2);
+            List<Integer> crong = List.of(1, 4);
+            assertThat(Problem1.solution(pobi, crong)).isEqualTo(Problem1.ERROR);
+        }
+
+        @Test
+        void case6() {
+            List<Integer> pobi = List.of(0, 401);
+            List<Integer> crong = List.of(1, 2);
+            assertThat(Problem1.solution(pobi, crong)).isEqualTo(Problem1.ERROR);
+        }
+
+        @Test
+        void case7() {
+            List<Integer> pobi = List.of(1, 2, 3);
+            List<Integer> crong = List.of(1, 2);
+            assertThat(Problem1.solution(pobi, crong)).isEqualTo(Problem1.ERROR);
         }
     }
 
